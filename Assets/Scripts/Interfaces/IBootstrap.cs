@@ -1,7 +1,9 @@
-﻿using Interfaces;
+﻿using System;
+using Interfaces;
 
 public interface IBootstrap
 {
-    void AddCommand(ICommand command);
+    public event Action ExecuteAllCommandNotify;
+    bool AddCommand(ICommand command);
     void StartExecute(); 
 }
